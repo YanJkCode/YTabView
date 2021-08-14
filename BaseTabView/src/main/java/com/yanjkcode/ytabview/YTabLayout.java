@@ -58,7 +58,7 @@ public class YTabLayout extends LinearLayout {
     private ViewPager viewPager;
     private ViewPager2 viewPager2;
     private float checkedScale;
-    private boolean isLiadTab;
+    private boolean isLoadTab;
 
     public YTabLayout(Context context) {
         super(context);
@@ -107,7 +107,7 @@ public class YTabLayout extends LinearLayout {
         valueAnimator.addUpdateListener(moveAnim);
         valueAnimator.addListener(listenerAdapter);
         valueAnimator.setDuration(0);
-        isLiadTab = false;
+        isLoadTab = false;
 
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
@@ -135,10 +135,6 @@ public class YTabLayout extends LinearLayout {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (showTabLine) {
-//            if (!isRunAnim && checkedView != null) {
-//                int y = checkedView.getTop() + (checkedView.getHeight() / 2);
-//                rect.set(checkedView.getLeft() - tabLineOffsetLeft, offsetLine(y - tabLineHeight), checkedView.getRight() + tabLineOffsetRight, offsetLine(y + tabLineHeight));
-//            }
             canvas.drawRoundRect(rect, tabLineRadius, tabLineRadius, mPaint);
         }
     }
@@ -298,8 +294,8 @@ public class YTabLayout extends LinearLayout {
     private final AnimatorListenerAdapter listenerAdapter = new AnimatorListenerAdapter() {
         @Override
         public void onAnimationEnd(Animator animation) {
-            if (!isLiadTab) {
-                isLiadTab = true;
+            if (!isLoadTab) {
+                isLoadTab = true;
                 valueAnimator.setDuration(duration);
             }
             isRunAnim = false;
