@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="duration" format="integer" />
+    <attr name="showTabLine" format="boolean" />
+    <attr name="lineColor" format="color" />
+    <attr name="tabSpace" format="dimension" />
+    <attr name="tabLineHeight" format="dimension">
+        <enum name="wrap_content" value="-2" />
+    </attr>
+    <attr name="tabLineRadius" format="dimension">
+        <enum name="wrap_content" value="-2" />
+    </attr>
+
+    <attr name="tabLineOffset" format="dimension" />
+    <attr name="tabLineOffsetDirection">
+        <enum name="top" value="0" />
+        <enum name="bottom" value="1" />
+    </attr>
+    <attr name="tabLineOffsetLeft" format="dimension" />
+    <attr name="tabLineOffsetRight" format="dimension" />
+
+
+    <declare-styleable name="YTabLayout">
+        <attr name="duration" />
+        <attr name="showTabLine" />
+        <attr name="lineColor" />
+        <attr name="tabSpace" />
+        <attr name="tabLineRadius" />
+        <attr name="tabLineHeight" />
+        <attr name="tabLineOffset" />
+        <attr name="tabLineOffsetDirection" />
+        <attr name="tabLineOffsetLeft" />
+        <attr name="tabLineOffsetRight" />
+    </declare-styleable>
+</resources>
